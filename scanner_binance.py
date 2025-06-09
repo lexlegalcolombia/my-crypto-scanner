@@ -163,6 +163,7 @@ def obtener_datos():
             ]
             datos.append(fila)
         except Exception as e:
+            print(f"Error para {cripto}: {e}") # Esto imprimirá el error en los logs de Streamlit Cloud
             fila = [cripto] + ["ERROR"] * (len(columnas) - 1)
             datos.append(fila)
     return pd.DataFrame(datos, columns=columnas)
